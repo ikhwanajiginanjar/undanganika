@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <title>Undangan Pernikahan</title>
     <style>
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
       body {
         font-family: "Times New Roman", Times, serif;
         background: #f8f5f0;
@@ -19,7 +27,7 @@
           url("—Pngtree—pernikahan jawa couple indonesia vector_8640773.png") center center/cover no-repeat;
         border-radius: 12px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        padding: 32px 32px 32px 32px;
+        padding: 32px;
         text-align: center;
         overflow: hidden;
         position: relative;
@@ -52,7 +60,7 @@
         background: #fffbe6cc;
         border-radius: 12px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        padding: 32px 32px;
+        padding: 32px;
         text-align: center;
       }
       .foto-pengantin {
@@ -85,13 +93,16 @@
           transform: translateY(8px);
         }
       }
+
       /* Responsive untuk HP */
       @media (max-width: 600px) {
         .container,
         .foto-section {
-          max-width: 98vw;
-          margin: 16px 1vw;
-          padding: 18px 7vw 18px 7vw;
+          width: 100%; /* full layar */
+          max-width: 100%; /* jangan lebih */
+          margin: 0;
+          border-radius: 0;
+          padding: 16px 12px; /* padding kecil biar lega */
         }
         .ornament-text {
           font-size: 1.3em;
@@ -106,7 +117,7 @@
           margin: 20px 0;
         }
         .foto-pengantin {
-          max-width: 95vw;
+          width: 100%; /* biar foto full di HP */
           height: auto;
           margin-bottom: 16px;
         }
@@ -127,7 +138,7 @@
   <body>
     <div class="container">
       <div class="ornament-text">Undangan Pernikahan</div>
-      <p>Maha suci Allah yang telah menciptakan makhul-nya berpasang-pasangan, Ya Allah,Perkenalkan Kami</p>
+      <p>Maha suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah, perkenalkan Kami</p>
       <div class="couple">
         <strong>Solihul Huda</strong><br />
         &amp;<br />
@@ -137,7 +148,7 @@
         <p>
           <strong>Akad Nikah:</strong><br />
           Kamis, 20 November 2025<br />
-          Pukul:-<br />
+          Pukul : -<br />
           Pendopo Agung, Desa Sukamaju, Yogyakarta
         </p>
         <p>
