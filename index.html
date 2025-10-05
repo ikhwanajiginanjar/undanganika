@@ -16,7 +16,59 @@
         color: #4b2e05;
       }
 
-      /* ===== BAGIAN UTAMA ===== */
+      .container {
+        display: none;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Layar pembuka */
+      .opening {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#fff8e7, #f2e4c7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        z-index: 100;
+      }
+
+      .opening h1 {
+        font-family: "Segoe Script", cursive;
+        font-size: 2em;
+        color: #4b2e05;
+        margin-bottom: 20px;
+      }
+
+      .open-btn {
+        background: #4b2e05;
+        color: white;
+        padding: 12px 28px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .open-btn:hover {
+        background: #7a5c2e;
+      }
+
+      /* ===== Isi Undangan ===== */
       .container {
         width: 100%;
         min-height: 100vh;
@@ -32,7 +84,6 @@
         font-weight: bold;
         margin-bottom: 20px;
         color: #4b2e05;
-        text-shadow: 0 1px 3px #fffbe6;
       }
 
       .couple {
@@ -66,7 +117,6 @@
         }
       }
 
-      /* ===== FOTO PENGANTIN ===== */
       .foto-section {
         width: 100%;
         background: #fffbe6cc;
@@ -87,27 +137,23 @@
         font-weight: bold;
         margin-bottom: 8px;
       }
-
-      /* ===== RESPONSIVE HP ===== */
-      @media (max-width: 600px) {
-        .ornament-text {
-          font-size: 1.5em;
-        }
-        .couple {
-          font-size: 1.2em;
-        }
-        .details {
-          font-size: 1em;
-        }
-        .foto-pengantin {
-          width: 100%;
-          max-width: none;
-        }
-      }
     </style>
   </head>
   <body>
-    <div class="container">
+    <!-- Musik -->
+    <audio id="bg-music" loop>
+      <source src="wedding-wedding-trailer-music-269139.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Layar pembuka -->
+    <div class="opening" id="opening">
+      <h1>Undangan Pernikahan</h1>
+      <p>Solihul Huda &amp; Ika Zulfa Fauziyyah</p>
+      <button class="open-btn" onclick="openInvitation()">💌 Buka Undangan</button>
+    </div>
+
+    <!-- Isi undangan -->
+    <div class="container" id="content">
       <div class="ornament-text">Undangan Pernikahan</div>
       <p>
         Maha suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan.<br />
@@ -123,18 +169,14 @@
           <strong>Akad Nikah:</strong><br />
           Kamis, 20 November 2025<br />
           Pukul : -<br />
-          Gaji wetan kali RT 1 RW 3
+          Pendopo Agung, Desa Sukamaju, Yogyakarta
         </p>
         <p>
           <strong>Lokasi:</strong><br />
           Jl. Wetan Kali, Gaji, Kec. Guntur, Kabupaten Demak, Jawa Tengah<br />
-          <a
-            href="https://maps.app.goo.gl/tLhtvFyyiLV5gDhm7"
-            target="_blank"
-            style="color: #4b2e05; text-decoration: underline; font-weight: bold"
+          <a href="https://maps.app.goo.gl/tLhtvFyyiLV5gDhm7" target="_blank"
+            >Lihat di Google Maps</a
           >
-            Lihat di Google Maps
-          </a>
         </p>
       </div>
       <p>
@@ -149,5 +191,13 @@
       <div class="nama-pengantin">Solihul Huda &amp; Ika Zulfa Fauziyyah</div>
       <div><em>Semoga menjadi keluarga sakinah, mawaddah, warahmah.</em></div>
     </div>
+
+    <script>
+      function openInvitation() {
+        document.getElementById("opening").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        document.getElementById("bg-music").play();
+      }
+    </script>
   </body>
 </html>
